@@ -17,6 +17,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { RegistroIngComponent } from './registro-ing/registro-ing.component';
 import { RegistroProComponent } from './registro-pro/registro-pro.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { RegistroMenuComponent } from './registro-menu/registro-menu.component';
+import { IngredientesComponent } from './ingredientes/ingredientes.component';
+import { MatTableModule } from '@angular/material/table';
+import { ListadoComponent } from './listado/listado.component';
+import { ProductosComponent } from './productos/productos.component';
+import { MatCardModule } from '@angular/material/card';
  
 
 
@@ -30,6 +36,10 @@ import { MatRadioModule } from '@angular/material/radio';
     RegistroUsuComponent,
     RegistroIngComponent,
     RegistroProComponent,
+    RegistroMenuComponent,
+    IngredientesComponent,
+    ListadoComponent,
+    ProductosComponent,
 
   ],
   imports: [
@@ -43,7 +53,9 @@ import { MatRadioModule } from '@angular/material/radio';
     MatInputModule,
     MatOptionModule,
     MatSelectModule,
-    MatRadioModule,        
+    MatRadioModule,
+    MatTableModule,
+    MatCardModule,        
 
   ],
   providers: [],

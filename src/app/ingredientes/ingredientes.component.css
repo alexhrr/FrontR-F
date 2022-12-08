@@ -1,0 +1,30 @@
+table {
+    width: 25%;
+}
+
+
+td, th {
+    text-align: center;
+}
+
+th{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.tabla {
+    width: 30%;
+    position: relative;
+    left: 35%;
+    text-align: center;
+}
+
+.texto {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.texto>h1 {
+    font-size: 8vh;
+    color: white;
+}

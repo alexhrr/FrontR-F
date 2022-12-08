@@ -1,0 +1,64 @@
+<div class="texto">
+    <h1>Arma tu menú</h1><br><br>
+</div>
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Nombre</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Entrada</mat-label>
+        <mat-select>
+            <mat-option value="one">Entrada 1</mat-option>
+            <mat-option value="two">Entrada 2</mat-option>
+            <mat-option value="three">Entrada 3</mat-option>
+            <mat-option value="four">Entrada 4</mat-option>
+        </mat-select>
+    </mat-form-field>    
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Plato fuerte</mat-label>
+        <mat-select>
+            <mat-option value="one">Plato fuerte 1</mat-option>
+            <mat-option value="two">Plato fuerte 2</mat-option>
+            <mat-option value="three">Plato fuerte 3</mat-option>
+            <mat-option value="four">Plato fuerte 4</mat-option>
+        </mat-select>
+    </mat-form-field>    
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Bebida</mat-label>
+        <mat-select>
+            <mat-option value="one">Bebida 1</mat-option>
+            <mat-option value="two">Bebida 2</mat-option>
+            <mat-option value="three">Bebida 3</mat-option>
+            <mat-option value="four">Bebida 4</mat-option>
+        </mat-select>
+    </mat-form-field>   
+    
+    <mat-form-field class="example-full-width">
+        <mat-label>Postre</mat-label>
+        <mat-select>
+            <mat-option value="one">Postre 1</mat-option>
+            <mat-option value="two">Postre 2</mat-option>
+            <mat-option value="three">Postre 3</mat-option>
+            <mat-option value="four">Postre 4</mat-option>
+        </mat-select>
+    </mat-form-field>    
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Precio</mat-label>
+        <input matInput value="0">
+        <span matTextPrefix >$&nbsp;</span>
+    </mat-form-field>
+    
+    <div class="cb">
+        <label >Personalizable: </label>
+        <mat-radio-group >
+            <mat-radio-button value="auto" color="primary">Si</mat-radio-button>
+            <mat-radio-button value="always" color="primary">No</mat-radio-button>
+        </mat-radio-group>
+    </div>  
+    <button mat-raised-button>Agregar</button>
+</form>

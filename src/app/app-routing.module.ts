@@ -5,6 +5,10 @@ import { MenuComponent } from './menu/menu.component';
 import { RegistroUsuComponent } from './registro-usu/registro-usu.component';
 import { RegistroIngComponent } from './registro-ing/registro-ing.component';
 import { RegistroProComponent } from './registro-pro/registro-pro.component';
+import { RegistroMenuComponent } from './registro-menu/registro-menu.component';
+import { IngredientesComponent } from './ingredientes/ingredientes.component';
+import { ProductosComponent } from './productos/productos.component';
+
 
 
 const routes: Routes = [
@@ -13,6 +17,9 @@ const routes: Routes = [
   {path:'registro-usuario',component:RegistroUsuComponent},
   {path:'registro-ingrediente',component:RegistroIngComponent},
   {path:'registro-producto',component:RegistroProComponent},
+  {path:'registro-menu',component:RegistroMenuComponent},
+  {path:'ingredientes',component:IngredientesComponent},
+  {path:'productos',component:ProductosComponent},
 ];
 
 @NgModule({

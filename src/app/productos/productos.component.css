@@ -1,0 +1,15 @@
+.texto {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.texto>h1 {
+    font-size: 8vh;
+    color: white;
+}
+
+
+.columnas {
+    display: grid;
+    grid-template-columns: repeat(5, 3fr);
+}
