@@ -24,6 +24,7 @@ import { ListadoComponent } from './listado/listado.component';
 import { ProductosComponent } from './productos/productos.component';
 import { MatCardModule } from '@angular/material/card';
 import { CarritoComponent } from './carrito/carrito.component';
+import { PedidoComponent } from './pedido/pedido.component';
  
 
 
@@ -42,6 +43,7 @@ import { CarritoComponent } from './carrito/carrito.component';
     ListadoComponent,
     ProductosComponent,
     CarritoComponent,
+    PedidoComponent,
 
   ],
   imports: [

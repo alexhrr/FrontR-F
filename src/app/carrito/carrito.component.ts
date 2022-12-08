@@ -26,6 +26,6 @@ const ELEMENT_DATA: CarritoCompras[] = [
 })
 
 export class CarritoComponent {
-  displayedColumns: string[] = ['Foto', 'Nombre', 'Categoria', 'Componentes', 'Cantidad', 'PrecioU', 'PrecioT'];
+  displayedColumns: string[] = ['Foto', 'Nombre', 'Categoria', 'Componentes', 'Cantidad', 'PrecioU', 'PrecioT', 'Borrar'];
   dataSource = ELEMENT_DATA;
 }
