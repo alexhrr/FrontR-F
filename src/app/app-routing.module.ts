@@ -8,18 +8,20 @@ import { RegistroProComponent } from './registro-pro/registro-pro.component';
 import { RegistroMenuComponent } from './registro-menu/registro-menu.component';
 import { IngredientesComponent } from './ingredientes/ingredientes.component';
 import { ProductosComponent } from './productos/productos.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 
 
 const routes: Routes = [
-  {path:'',component:LoginComponent},
-  {path:'menu',component:MenuComponent},
-  {path:'registro-usuario',component:RegistroUsuComponent},
-  {path:'registro-ingrediente',component:RegistroIngComponent},
-  {path:'registro-producto',component:RegistroProComponent},
-  {path:'registro-menu',component:RegistroMenuComponent},
-  {path:'ingredientes',component:IngredientesComponent},
-  {path:'productos',component:ProductosComponent},
+  { path: '', component: LoginComponent },
+  { path: 'menu', component: MenuComponent },
+  { path: 'registro-usuario', component: RegistroUsuComponent },
+  { path: 'registro-ingrediente', component: RegistroIngComponent },
+  { path: 'registro-producto', component: RegistroProComponent },
+  { path: 'registro-menu', component: RegistroMenuComponent },
+  { path: 'ingredientes', component: IngredientesComponent },
+  { path: 'productos', component: ProductosComponent },
+  { path: 'carrito', component: CarritoComponent },
 ];
 
 @NgModule({
