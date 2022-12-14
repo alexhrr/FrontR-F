@@ -3,19 +3,34 @@
     <p>Ingresa tus datos</p>
 </div>
 
-<form class="example-form">
+<img class="tamañoi" src="../assets/img/comida1.jpg">
+
+
+
+
+
+
+<form class="example-form" (submit)="Ingresar(tipo, nombre, pass)">
     <mat-form-field class="example-full-width">
-        <mat-label>Nombre </mat-label>
-        <input matInput>
+        <mat-label>Tipo de ususario</mat-label>
+        <mat-select #tipo>
+            <mat-option value="cliente">Cliente</mat-option>
+            <mat-option value="restaurante">Restaurante</mat-option>
+        </mat-select>
     </mat-form-field>
 
-    
+    <mat-form-field class="example-full-width">
+        <mat-label>Nombre </mat-label>
+        <input matInput #nombre>
+    </mat-form-field>
+
+
     <br>
-        <mat-form-field class="example-full-width">
-            <mat-label>Contraseña</mat-label>
-            <input matInput type="password" >
-        </mat-form-field>
-        
+    <mat-form-field class="example-full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" #pass>
+    </mat-form-field>
+
 
     <button mat-raised-button>Ingresar</button>
 </form>

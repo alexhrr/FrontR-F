@@ -2,18 +2,18 @@
     <h1>Agrega tu ingrediente</h1><br><br>    
 </div>
 
-<form class="example-form">
+<form class="example-form" (submit) = "registro()">
     <mat-form-field class="example-full-width">
         <mat-label>Ingrediente</mat-label>
-        <input matInput>
+        <input matInput #ingrediente>
     </mat-form-field>
     <mat-form-field class="example-full-width">
         <mat-label>Cantidad</mat-label>
-        <input matInput>
+        <input matInput #cantidad>
     </mat-form-field>
     <mat-form-field class="example-full-width">
         <mat-label>Unidades</mat-label>
-        <mat-select>
+        <mat-select #unidades>
             <mat-option value="one">Unidad 1</mat-option>
             <mat-option value="two">Unidad 2</mat-option>
         </mat-select>

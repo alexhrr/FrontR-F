@@ -1,0 +1,32 @@
+<div class="texto">
+    <h1>Bienvenido </h1><br><br>
+</div>
+
+
+<mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <h2> Menús</h2>
+        </mat-panel-title>
+        <mat-panel-description>
+            Todos los menú disponibles en nuestra plataforma
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="columnas">
+        <app-listado *ngFor="let menu of menus" [dataProducto]="menu"> </app-listado>
+    </div>
+</mat-expansion-panel>
+
+<mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <h2> Productos </h2>
+        </mat-panel-title>
+        <mat-panel-description>
+            Todos los productos disponibles en nuestra plataforma
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="columnas">
+        <app-listado *ngFor="let producto of productos" [dataProducto]="producto"> </app-listado>
+    </div>
+</mat-expansion-panel>

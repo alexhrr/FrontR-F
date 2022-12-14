@@ -25,6 +25,8 @@ import { ProductosComponent } from './productos/productos.component';
 import { MatCardModule } from '@angular/material/card';
 import { CarritoComponent } from './carrito/carrito.component';
 import { PedidoComponent } from './pedido/pedido.component';
+import { MenuClienteComponent } from './menu-cliente/menu-cliente.component';
+import { MatExpansionModule } from '@angular/material/expansion';
  
 
 
@@ -44,6 +46,7 @@ import { PedidoComponent } from './pedido/pedido.component';
     ProductosComponent,
     CarritoComponent,
     PedidoComponent,
+    MenuClienteComponent,
 
   ],
   imports: [
@@ -60,7 +63,8 @@ import { PedidoComponent } from './pedido/pedido.component';
     MatRadioModule,
     MatTableModule,
     MatCardModule,        
-
+    MatExpansionModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

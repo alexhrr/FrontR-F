@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./registro-pro.component.css']
 })
 export class RegistroProComponent {
+  registro() {
 
+  }
 }

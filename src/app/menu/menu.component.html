@@ -1,12 +1,9 @@
-<p>menu works!</p>
+<div class="texto">
+  <h1>Menús </h1><br><br>
+</div>
 
-<mat-form-field> 
-    <input matInput type="text">
-</mat-form-field>
 
-<button mat-button color="primary">aceptar </button>
-<button mat-stroked-button color="accent">Accent</button>
-<button mat-icon-button>
-  <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
-</button>
+<div class="columnas">
+  <app-listado *ngFor = "let menu of menus" [dataProducto] = "menu"> </app-listado>
+</div>
 
