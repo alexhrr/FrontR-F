@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatIconModule} from '@angular/material/icon';
-import { MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -9,8 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { MatToolbarModule} from '@angular/material/toolbar';
-import { MatInputModule} from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
 import { RegistroUsuComponent } from './registro-usu/registro-usu.component';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
@@ -27,7 +27,8 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { PedidoComponent } from './pedido/pedido.component';
 import { MenuClienteComponent } from './menu-cliente/menu-cliente.component';
 import { MatExpansionModule } from '@angular/material/expansion';
- 
+import { DataService } from './data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -62,11 +63,14 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatSelectModule,
     MatRadioModule,
     MatTableModule,
-    MatCardModule,        
+    MatCardModule,
     MatExpansionModule,
-    
+    HttpClientModule,
+
   ],
-  providers: [],
+  providers: [
+    DataService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

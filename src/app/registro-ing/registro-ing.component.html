@@ -5,20 +5,21 @@
 
 
 
-<form class="example-form" (submit)="registro()">
+<form class="example-form" onsubmit="return false" (submit)="registro(ingrediente.value, cantidad.value, und.value)">
     <mat-form-field class="example-full-width">
         <mat-label>Ingrediente</mat-label>
-        <input matInput #ingrediente>
+        <input matInput  #ingrediente >
     </mat-form-field>
     <mat-form-field class="example-full-width">
         <mat-label>Cantidad</mat-label>
         <input matInput #cantidad>
     </mat-form-field>
-    <mat-form-field class="example-full-width">
-        <mat-label>Unidades</mat-label>
-        <mat-select #unidades>
-            <mat-option value="one">Unidad 1</mat-option>
-            <mat-option value="two">Unidad 2</mat-option>
+
+    <mat-form-field>
+        <mat-select placeholder="Unidades" formControlName="und" #und>
+            <mat-option *ngFor="let item of unidades" [value]="item.id"> {{ item.nnombreUnidad }}
+
+            </mat-option>
         </mat-select>
     </mat-form-field>
     <button mat-raised-button>Agregar</button>
