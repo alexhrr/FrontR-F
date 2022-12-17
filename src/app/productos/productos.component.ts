@@ -10,19 +10,18 @@ import { DataService } from 'src/app/data.service';
 
 
 export class ProductosComponent {
-  productos: Array<any> = [];
+  productos: any = [];
   prod: any = [];
   categorias: any = [];
   constructor(private dataService: DataService) {
 
-    this.dataService.getProductos().subscribe(data => { this.prod = data })
-    this.dataService.getCategoria().subscribe(data => { this.categorias = data })
-    this.generarDatos()
+    this.dataService.getProductos().subscribe(data => { this.productos = data })
+    
   }
 
   generarDatos() {
     for (let producto of this.prod) {
-      this.productos.push({ nombre: producto.n_nombre,categoria: this.obtenerCategorias(producto.fk_idcategoria), precio: producto.v_precio })
+      this.productos.push({ nombre: producto.n_nombre, categoria: this.obtenerCategorias(producto.fk_idcategoria), precio: producto.v_precio })
     }
   }
   obtenerCategorias(x: any) {

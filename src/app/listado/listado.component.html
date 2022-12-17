@@ -1,19 +1,20 @@
 <mat-card class="example-card">
     <mat-card-header>
         <mat-card-title class="titulo">
-            <p>{{dataProducto.nombre}}</p>
+            <p>{{dataProducto.n_nombre}}</p>
         </mat-card-title>
     </mat-card-header>
 
-    <img class="tamañoi" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <img class="tamañoi" mat-card-image [src]="'http://localhost:8090/database-files/'+ dataProducto.i_fotoId"
+        alt="Comida :)">
 
-    <mat-card-content class = "contenedor">
-        <p>Categoria: {{dataProducto.categoria}}</p>
-        <p>Precio: {{dataProducto.precio}}</p>
+    <mat-card-content class="contenedor">
+        <p>Categoria: {{dataProducto.fk_idCategoria.n_nombre}}</p>
+        <p>Precio: {{dataProducto.v_precio}}</p>
     </mat-card-content>
 
     <mat-card-actions>
         <button mat-raised-button>Añadir al carrito</button>
-        
+
     </mat-card-actions>
 </mat-card>

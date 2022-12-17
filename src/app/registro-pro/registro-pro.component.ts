@@ -16,6 +16,7 @@ export class RegistroProComponent {
   constructor(private dataService: DataService) {
     this.dataService.getIngredientes().subscribe(data => { this.ingredientes = data })
     this.dataService.getCategoria().subscribe(data => { this.categorias = data })
+    
   }
 
   registro(producto: any, cat: any, precio: any, cantidad: any, ing: any, personalizable: String, foto: any) {
@@ -36,24 +37,17 @@ export class RegistroProComponent {
         timer: 2000
       })
       this.idProducto = data["pk_idProducto"]
-      console.log(this.formData)
-      debugger
       this.dataService.setFoto(this.idProducto, this.formData).subscribe()
     })
 
-    
-    
     //this.dataService.setProductoIngrediente({ cantidad: 1, id_ing: ing.value, id_prod: this.idProducto }).subscribe()
-
 
   }
   onChange(event: any) {
 
 
     if (event != undefined) {
-
       let file = event.files[0];
-
 
       this.formData.append('file', file)
 

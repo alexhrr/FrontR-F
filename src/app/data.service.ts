@@ -42,6 +42,10 @@ export class DataService {
     return this.http.get('http://localhost:8090/categoriaProducto')
   }
 
+  getFoto(id: any){
+    return this.http.get('http://localhost:8090/database-files/'+ id)
+  }
+
   setProductos(producto: any):any{
     return this.http.post('http://localhost:8090/producto', producto)
   }

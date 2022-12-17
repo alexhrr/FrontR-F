@@ -3,7 +3,7 @@
 </div>
 
 <div class="tabla">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="ingredientes" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -11,19 +11,19 @@
         <!-- Nombre Column -->
         <ng-container matColumnDef="Nombre">
             <th mat-header-cell *matHeaderCellDef> Nombre </th>
-            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.n_nombre}} </td>
         </ng-container>
 
         <!-- Cantidad Column -->
         <ng-container matColumnDef="Cantidad">
             <th mat-header-cell *matHeaderCellDef> Cantidad </th>
-            <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.q_unidades}} </td>
         </ng-container>
 
         <!-- Unidades Column -->
         <ng-container matColumnDef="Unidades">
             <th mat-header-cell *matHeaderCellDef> Unidades </th>
-            <td mat-cell *matCellDef="let element"> {{element.unidades}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.fk_idUnidad.n_nombre_unidad}} ({{element.fk_idUnidad.n_sigla}})</td>
         </ng-container>
 
         
