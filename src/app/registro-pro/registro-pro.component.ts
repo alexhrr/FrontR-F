@@ -36,11 +36,13 @@ export class RegistroProComponent {
         timer: 2000
       })
       this.idProducto = data["pk_idProducto"]
-
+      console.log(this.formData)
+      debugger
+      this.dataService.setFoto(this.idProducto, this.formData).subscribe()
     })
 
-    debugger
-    this.dataService.setFoto(this.idProducto, this.formData).subscribe()
+    
+    
     //this.dataService.setProductoIngrediente({ cantidad: 1, id_ing: ing.value, id_prod: this.idProducto }).subscribe()
 
 
@@ -48,7 +50,7 @@ export class RegistroProComponent {
   onChange(event: any) {
 
 
-    if (event != undefined && this.idProducto != null) {
+    if (event != undefined) {
 
       let file = event.files[0];
 
