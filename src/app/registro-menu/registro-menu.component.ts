@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from 'src/app/data.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro-menu',
@@ -12,6 +13,9 @@ export class RegistroMenuComponent {
   platosfuertes: any = []
   bebidas: any = []
   postres: any = []
+  formData = new FormData();
+  idMenu: any;
+
 
   constructor(private dataService: DataService) {
 
@@ -38,7 +42,27 @@ export class RegistroMenuComponent {
         entrada, platofuerte, bebida, postre
 
       ]
-    }).subscribe()
-  }
+    }).subscribe((data: { [x: string]: any; }) => {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Menu agregado',
+        showConfirmButton: false,
+        timer: 2000
+      })
+      this.idMenu = data["pk_idMenu"]
 
+      this.dataService.setFotoMenu(this.idMenu, this.formData).subscribe()
+    })
+  }
+  onChange(event: any) {
+
+
+    if (event != undefined) {
+      let file = event.files[0];
+
+      this.formData.append('file', file)
+
+    }
+  }
 }

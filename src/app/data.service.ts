@@ -80,4 +80,7 @@ export class DataService {
   setFoto(id: any, foto: any) {
     return this.http.post('http://localhost:8090/producto/foto/'+id, foto)
   }
+  setFotoMenu(id: any, foto: any) {
+    return this.http.post('http://localhost:8090/menu/foto/'+id, foto)
+  }
 }

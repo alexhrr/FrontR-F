@@ -62,6 +62,7 @@
         </mat-select>
     </mat-form-field>
 
+    <div class="cb"> <input #foto type="file" formControlName="foto" (change)="onChange($event.target)"></div>
     <button mat-raised-button>Agregar</button>
     <a class="boton" mat-raised-button href="/menu-restaurante" >Cancelar</a>
 </form>
