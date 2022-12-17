@@ -3,7 +3,7 @@
   <p>Completa el formulario para crear tu cuenta</p>
 </div>
 
-<form class="example-form" (submit) = "registro()">
+<form class="example-form" (submit) = "registro(nombre, tipo, email, telefono, pass, passc)">
   <mat-form-field class="example-full-width">
     <mat-label>Nombre</mat-label>
     <input matInput #nombre>
@@ -11,13 +11,13 @@
   <mat-form-field class="example-full-width">
     <mat-label>Tipo</mat-label>
     <mat-select #tipo>
-      <mat-option value="one">Cliente</mat-option>
-      <mat-option value="two">Restaurante</mat-option>
+      <mat-option value="cliente">Cliente</mat-option>
+      <mat-option value="restaurante">Restaurante</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field class="example-full-width">
     <mat-label>Correo</mat-label>
-    <input matInput type="email" #tipo>
+    <input matInput type="email" #email>
   </mat-form-field>
   <mat-form-field class="example-full-width">
     <mat-label>Telefono</mat-label>

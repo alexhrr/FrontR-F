@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-productos',
@@ -9,20 +10,26 @@ import { Component } from '@angular/core';
 
 
 export class ProductosComponent {
-  productos: Array<any> = [
-    { nombre: "CocaCola", categoria: "Bebida", precio: 5000 },
-    { nombre: "Hamburguesa", categoria: "Plato Fuerte", precio: 20000 },
-    { nombre: "Tres leches", categoria: "Postre", precio: 5000 },
-    { nombre: "Pizza", categoria: "Plato fuerte", precio: 16000 },
-    { nombre: "Brownie", categoria: "Postre", precio: 6000 },
-    { nombre: "Limonada", categoria: "Bebida", precio: 7000 },
-    { nombre: "Pollo asado", categoria: "Plato fuerte", precio: 30000 },
+  productos: Array<any> = [];
+  prod: any = [];
+  categorias: any = [];
+  constructor(private dataService: DataService) {
 
-
-  ];
-
-  constructor() {
-
+    this.dataService.getProductos().subscribe(data => { this.prod = data })
+    this.dataService.getCategoria().subscribe(data => { this.categorias = data })
+    this.generarDatos()
   }
 
+  generarDatos() {
+    for (let producto of this.prod) {
+      this.productos.push({ nombre: producto.n_nombre,categoria: this.obtenerCategorias(producto.fk_idcategoria), precio: producto.v_precio })
+    }
+  }
+  obtenerCategorias(x: any) {
+    for (let categoria of this.categorias) {
+      if (categoria.pk_idcategoria == x) {
+        return categoria.n_nombre
+      }
+    }
+  }
 }

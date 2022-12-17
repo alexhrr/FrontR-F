@@ -1,24 +1,76 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Ingrediente } from 'src/app/ingrediente';
-import { HttpClientService } from '../../../service/http-client.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  constructor(private http: HttpClient, private httpClientService: HttpClientService) {
+  constructor(private http: HttpClient) {
 
   }
 
-  getData() {
+  getUnidades() {
     return this.http.get('http://localhost:8090/tipoUnidad')
   }
 
-  setData(ingrediente: Ingrediente) {
-    alert(ingrediente.cantidad)
-    return this.http.post<Ingrediente>('http://localhost:8090/ingrediente/newingredient', ingrediente)
-    
+  getIngredientes(){
+    return this.http.get('http://localhost:8090/ingrediente')
+  }
+
+  getProductos(){
+    return this.http.get('http://localhost:8090/producto')
+  }
+  
+  getMenu(){
+    return this.http.get('http://localhost:8090/menu')
+  }
+
+  getCliente(){
+    return this.http.get('http://localhost:8090/cliente')
+  }
+
+  getPedido(){
+    return this.http.get('http://localhost:8090/pedido')
+  }
+
+  getRestaurante(){
+    return this.http.get('http://localhost:8090/Restaurante')
+  }
+  getCategoria(){
+    return this.http.get('http://localhost:8090/categoria_producto')
+  }
+
+  setProductos(producto: any){
+    return this.http.post('http://localhost:8090/producto', producto)
+  }
+  
+  setMenu(menu: any){
+    return this.http.post('http://localhost:8090/menu', menu)
+  }
+
+  setCliente(cliente: any){
+    return this.http.post('http://localhost:8090/cliente', cliente)
+  }
+
+  setPedido(pedido: any){
+    return this.http.post('http://localhost:8090/pedido', pedido)
+  }
+
+  setRestaurante(restaurante: any){
+    return this.http.post('http://localhost:8090/Restaurante', restaurante)
+  }
+
+  setIngredientes(ingrediente: Ingrediente) {
+    return this.http.post<Ingrediente>('http://localhost:8090/ingrediente', ingrediente)
+  }
+
+  setProductoIngrediente(productoingrediente: any) {
+    return this.http.post('http://localhost:8090/productoIngrediente', productoingrediente)
+  }
+
+  setProductoMenu(productomenu: any) {
+    return this.http.post('http://localhost:8090/productoMenu', productomenu)
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-login',
@@ -7,19 +8,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private router: Router) {
-
+  clientes: any = [];
+  restaurantes: any = [];
+  constructor(private router: Router, private dataService: DataService) {
+    this.dataService.getCliente().subscribe(data => { this.clientes = data })
+    this.dataService.getRestaurante().subscribe(data => { this.restaurantes = data })
   }
 
   Ingresar(tipo: any, nombre: any, pass: any) {
     if (tipo.value == "cliente") {
-      this.router.navigate(['/menu-cliente'])
+      for (let cliente of this.clientes) {
+        if (cliente.n_correo == nombre && cliente.p_contrasenia == pass) {
+          this.router.navigate(['/menu-cliente'])
+        }
+      }
+      alert("Usuario o contraseña incorrecta")
     }
-    else{
-      this.router.navigate(['/menu'])
+    else {
+      for (let restaurante of this.restaurantes) {
+        if (restaurante.n_correo == nombre && restaurante.p_contrasenia == pass) {
+          this.router.navigate(['/menu'])
+        }
+      }
+      alert("Usuario o contraseña incorrecta")
+
     }
-    //aqui se debe validar el usuario y contraseña en la base de datos
-       
+
+
     return false
   }
 

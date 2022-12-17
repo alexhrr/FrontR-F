@@ -3,42 +3,41 @@
     <h1>Agrega tu producto</h1><br><br>
 </div>
 
-<form class="example-form" (submit) = "registro()">
+<form class="example-form" (submit)="registro(producto, cat, precio, cantidad, ing, personalizable)" >
     <mat-form-field class="example-full-width">
         <mat-label>Producto</mat-label>
         <input matInput #producto>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-        <mat-label>Categoria</mat-label>
-        <mat-select #categoria>
-            <mat-option value="one">Entrada</mat-option>
-            <mat-option value="two">Bebida</mat-option>
-            <mat-option value="three">Postre</mat-option>
-            <mat-option value="four">Plato fuerte</mat-option>
+        <mat-select placeholder="Categoria" formControlName="cat" #cat>
+            <mat-option *ngFor="let item of categorias" [value]="item.id"> {{ item.nNombre }}
+
+            </mat-option>
         </mat-select>
-    </mat-form-field>    
+    </mat-form-field>
     <mat-form-field class="example-full-width">
         <mat-label>Precio</mat-label>
         <input matInput value="0" #precio>
-        <span matTextPrefix >$&nbsp;</span>
+        <span matTextPrefix>$&nbsp;</span>
     </mat-form-field>
     <mat-form-field class="example-full-width">
         <mat-label>Cantidad</mat-label>
         <input matInput #cantidad>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-        <mat-label>Ingredientes</mat-label>
-        <mat-select #cantidad>
-            <mat-option value="one">Unidad 1</mat-option>
-            <mat-option value="two">Unidad 2</mat-option>
+        <mat-select placeholder="Ingrediente" formControlName="ing" #ing>
+            <mat-option *ngFor="let item of ingredientes" [value]="item.id"> {{ item.nNombre }}
+
+            </mat-option>
         </mat-select>
     </mat-form-field>
     <div class="cb">
-        <label >Personalizable: </label>
+        <label>Personalizable: </label>
         <mat-radio-group #personalizable>
-            <mat-radio-button value="auto" color="primary">Si</mat-radio-button>
-            <mat-radio-button value="always" color="primary">No</mat-radio-button>
+            <mat-radio-button value="true" color="primary">Si</mat-radio-button>
+            <mat-radio-button value="false" color="primary">No</mat-radio-button>
         </mat-radio-group>
-    </div>  
-    <button mat-raised-button>Agregar</button>  
+    </div>
+
+    <button mat-raised-button>Agregar</button>
 </form>

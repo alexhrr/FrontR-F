@@ -2,67 +2,60 @@
     <h1>Arma tu menú</h1><br><br>
 </div>
 
-<form class="example-form" (submit) = "registro()">
+<form class="example-form" (submit)="registro( nombre, entrada, platofuerte, bebida, postre, precio, personalizable)">
     <mat-form-field class="example-full-width">
         <mat-label>Nombre</mat-label>
         <input matInput #nombre>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-        <mat-label>Entrada</mat-label>
-        <mat-select #entrada>
+        <mat-select placeholder="Entrada" formControlName="entrada" #entrada>
             <mat-option value="vacio">--Seleccione--</mat-option>
-            <mat-option value="one">Entrada 1</mat-option>
-            <mat-option value="two">Entrada 2</mat-option>
-            <mat-option value="three">Entrada 3</mat-option>
-            <mat-option value="four">Entrada 4</mat-option>
+            <mat-option *ngFor="let entrada of entradas" [value]="entrada.id"> {{ entrada.nNombre }}
+
+            </mat-option>
         </mat-select>
-    </mat-form-field>    
+    </mat-form-field>
 
     <mat-form-field class="example-full-width">
-        <mat-label>Plato fuerte</mat-label>
-        <mat-select #platofuerte>
+        <mat-select placeholder="Plato fuerte" formControlName="platofuerte" #platofuerte>
             <mat-option value="vacio">--Seleccione--</mat-option>
-            <mat-option value="one">Plato fuerte 1</mat-option>
-            <mat-option value="two">Plato fuerte 2</mat-option>
-            <mat-option value="three">Plato fuerte 3</mat-option>
-            <mat-option value="four">Plato fuerte 4</mat-option>
+            <mat-option *ngFor="let plato of platosfuertes" [value]="plato.id"> {{ plato.nNombre }}
+
+            </mat-option>
         </mat-select>
-    </mat-form-field>    
+    </mat-form-field>
 
     <mat-form-field class="example-full-width">
-        <mat-label>Bebida</mat-label>
-        <mat-select #bebida>
+        <mat-select placeholder="Bebida" formControlName="bebida" #bebida>
             <mat-option value="vacio">--Seleccione--</mat-option>
-            <mat-option value="one">Bebida 1</mat-option>
-            <mat-option value="two">Bebida 2</mat-option>
-            <mat-option value="three">Bebida 3</mat-option>
-            <mat-option value="four">Bebida 4</mat-option>
+            <mat-option *ngFor="let bebida of bebidas" [value]="bebida.id"> {{ bebida.nNombre }}
+
+            </mat-option>
         </mat-select>
-    </mat-form-field>   
-    
+    </mat-form-field>
+
     <mat-form-field class="example-full-width">
-        <mat-label>Postre</mat-label>
-        <mat-select #postre>
+        <mat-select placeholder="Postre" formControlName="postre" #postre>
             <mat-option value="vacio">--Seleccione--</mat-option>
-            <mat-option value="one">Postre 1</mat-option>
-            <mat-option value="two">Postre 2</mat-option>
-            <mat-option value="three">Postre 3</mat-option>
-            <mat-option value="four">Postre 4</mat-option>
+            <mat-option *ngFor="let postre of postres" [value]="postre.id"> {{ postre.nNombre }}
+
+            </mat-option>
         </mat-select>
-    </mat-form-field>    
+    </mat-form-field>
+
 
     <mat-form-field class="example-full-width">
         <mat-label>Precio</mat-label>
         <input matInput value="0" #precio>
-        <span matTextPrefix >$&nbsp;</span>
+        <span matTextPrefix>$&nbsp;</span>
     </mat-form-field>
-    
+
     <div class="cb">
-        <label >Personalizable: </label>
+        <label>Personalizable: </label>
         <mat-radio-group #personalizable>
-            <mat-radio-button value="auto" color="primary">Si</mat-radio-button>
-            <mat-radio-button value="always" color="primary">No</mat-radio-button>
+            <mat-radio-button value="true" color="primary">Si</mat-radio-button>
+            <mat-radio-button value="false" color="primary">No</mat-radio-button>
         </mat-radio-group>
-    </div>  
+    </div>
     <button mat-raised-button>Agregar</button>
 </form>

@@ -1,22 +1,14 @@
 import { Component } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 export interface PeriodicElement {
   nombre: string;
   cantidad: number;
   unidades: String;
-  }
+}
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  { nombre: 'Tomate', cantidad: 50, unidades: 'unidad' },  
-  { nombre: 'Cebolla', cantidad: 50, unidades: 'Gramos' },  
-  { nombre: 'Lechuga', cantidad: 25, unidades: 'unidad' },  
-  { nombre: 'Queso', cantidad: 20, unidades: 'Libras' },  
-  { nombre: 'Jamón', cantidad: 20, unidades: 'Libras' },  
-  { nombre: 'Pan', cantidad: 50, unidades: 'unidad' },  
-  { nombre: 'Carne', cantidad: 50, unidades: 'Libras' },  
-  { nombre: 'Pollo', cantidad: 50, unidades: 'Libras' },  
+const ELEMENT_DATA: PeriodicElement[] = [];
 
-];
 
 @Component({
   selector: 'app-ingredientes',
@@ -24,7 +16,29 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./ingredientes.component.css']
 })
 export class IngredientesComponent {
+  ingredientes: any = [];
+  unidades: any = [];
+  constructor(private dataService: DataService) {
+
+    this.dataService.getIngredientes().subscribe(data => { this.ingredientes = data })
+    this.generarDatos()
+
+    this.dataService.getUnidades().subscribe(data => { this.unidades = data })
+  }
+
   displayedColumns: string[] = ['Nombre', 'Cantidad', 'Unidades'];
-  dataSource = ELEMENT_DATA;
-  
+  dataSource = this.ingredientes;
+  generarDatos() {
+    for (let ingrediente of this.ingredientes) {
+      ELEMENT_DATA.push({ nombre: ingrediente.n_nombre, cantidad: ingrediente.q_unidades, unidades: this.obtenerUnidades(ingrediente.fkIdunidad) })
+    }
+  }
+
+  obtenerUnidades(x: any) {
+    for (let unidad of this.unidades) {
+      if (unidad.id == x) {
+        return unidad.nombre
+      }
+    }
+  }
 }

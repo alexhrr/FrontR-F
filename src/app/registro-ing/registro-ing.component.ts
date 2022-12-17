@@ -11,13 +11,13 @@ export class RegistroIngComponent {
   
   unidades: any = [];
   constructor(private dataService: DataService) {
-    this.dataService.getData().subscribe(data => { this.unidades = data })
+    this.dataService.getUnidades().subscribe(data => { this.unidades = data })
   }
 
 
   registro(igr: string, cant: any, unidad: any) {
     alert(igr + cant + unidad)
-    this.dataService.setData({id:igr, cantidad: cant, idunidad: unidad, nombre: igr }).subscribe(ingredienteData => { console.log(ingredienteData) })
+    this.dataService.setIngredientes({id:igr, cantidad: cant, idunidad: unidad, nombre: igr }).subscribe(ingredienteData => { console.log(ingredienteData) })
     
   }
 }
