@@ -27,7 +27,7 @@ export class LoginComponent {
     else {
       for (let restaurante of this.restaurantes) {
         if (restaurante.n_correo == nombre && restaurante.p_contrasenia == pass) {
-          this.router.navigate(['/menu'])
+          this.router.navigate(['/menu-restaurante'])
         }
       }
       alert("Usuario o contraseña incorrecta")

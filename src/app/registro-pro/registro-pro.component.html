@@ -10,7 +10,7 @@
     </mat-form-field>
     <mat-form-field class="example-full-width">
         <mat-select placeholder="Categoria" formControlName="cat" #cat>
-            <mat-option *ngFor="let item of categorias" [value]="item.id"> {{ item.nNombre }}
+            <mat-option *ngFor="let item of categorias" [value]="item.pk_idCategoria"> {{ item.n_nombre }}
 
             </mat-option>
         </mat-select>
@@ -26,7 +26,7 @@
     </mat-form-field>
     <mat-form-field class="example-full-width">
         <mat-select placeholder="Ingrediente" formControlName="ing" #ing>
-            <mat-option *ngFor="let item of ingredientes" [value]="item.id"> {{ item.nNombre }}
+            <mat-option *ngFor="let item of ingredientes" [value]="item.pk_idIngrediente"> {{ item.n_nombre }}
 
             </mat-option>
         </mat-select>

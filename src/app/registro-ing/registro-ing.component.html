@@ -15,9 +15,9 @@
         <input matInput #cantidad>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field class="example-full-width">
         <mat-select placeholder="Unidades" formControlName="und" #und>
-            <mat-option *ngFor="let item of unidades" [value]="item.id"> {{ item.nnombreUnidad }}
+            <mat-option *ngFor="let item of unidades" [value]="item.pk_idUnidad"> {{ item.n_nombre_unidad }}
 
             </mat-option>
         </mat-select>

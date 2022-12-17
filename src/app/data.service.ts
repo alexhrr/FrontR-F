@@ -39,7 +39,7 @@ export class DataService {
     return this.http.get('http://localhost:8090/Restaurante')
   }
   getCategoria(){
-    return this.http.get('http://localhost:8090/categoria_producto')
+    return this.http.get('http://localhost:8090/categoriaProducto')
   }
 
   setProductos(producto: any){
@@ -62,8 +62,8 @@ export class DataService {
     return this.http.post('http://localhost:8090/Restaurante', restaurante)
   }
 
-  setIngredientes(ingrediente: Ingrediente) {
-    return this.http.post<Ingrediente>('http://localhost:8090/ingrediente', ingrediente)
+  setIngredientes(ingrediente: any) {
+    return this.http.post('http://localhost:8090/ingrediente', ingrediente)
   }
 
   setProductoIngrediente(productoingrediente: any) {

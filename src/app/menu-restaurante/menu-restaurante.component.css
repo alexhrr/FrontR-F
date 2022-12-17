@@ -1,0 +1,39 @@
+.texto {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.texto>h1 {
+    font-size: 8vh;
+    color: white;
+}
+
+
+.columnas {
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+    justify-items: center;
+}
+
+.example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+
+  .boton{
+    width: 500px;
+    margin: 30px;
+    height: 80px;
+    font-size: 22px;
+  }

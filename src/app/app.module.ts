@@ -29,6 +29,7 @@ import { MenuClienteComponent } from './menu-cliente/menu-cliente.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { DataService } from './data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuRestauranteComponent } from './menu-restaurante/menu-restaurante.component';
 
 
 
@@ -48,6 +49,7 @@ import { HttpClientModule } from '@angular/common/http';
     CarritoComponent,
     PedidoComponent,
     MenuClienteComponent,
+    MenuRestauranteComponent,
 
   ],
   imports: [
