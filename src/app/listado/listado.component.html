@@ -9,7 +9,7 @@
         alt="Comida :)">
 
     <mat-card-content class="contenedor">
-        <p>Categoria: {{dataProducto.fk_idCategoria.n_nombre}}</p>
+        <p *ngIf="dataProducto.fk_idCategoria != undefined">Categoria: {{dataProducto.fk_idCategoria.n_nombre}}</p>
         <p>Precio: {{dataProducto.v_precio}}</p>
     </mat-card-content>
 

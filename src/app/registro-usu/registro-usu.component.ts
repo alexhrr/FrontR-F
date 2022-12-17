@@ -9,15 +9,30 @@ import { DataService } from 'src/app/data.service';
 export class RegistroUsuComponent {
   hide = true
   constructor(private dataService: DataService) {
-    
+
   }
 
-  registro(nombre: any, tipo: any, email: any, telefono: any, pass:any, passc:any){
-    if(tipo.value == "cliente"){
-      this.dataService.setCliente({nombre: nombre.value, telefono: telefono.value, email: email.value, pass: pass.value}).subscribe()
-    } else{
-      this.dataService.setRestaurante({nombre: nombre.value, telefono: telefono.value, email: email.value, pass: pass.value}).subscribe()
-    }    
+  registro(nombre: any, tipo: any, email: any, telefono: any, pass: any, passc: any) {
+    alert(nombre + telefono + email + pass + tipo)
+    if (tipo == "cliente") {
+      alert('Soy un Cliente')
+      this.dataService.setCliente({
+        "n_nombre": nombre,
+        "n_celular": telefono,
+        "n_correo": email,
+        "p_contrasenia": pass,
+      }).subscribe()
+    } else {
+      alert('Soy un Restaurante')
+      this.dataService.setRestaurante({
+
+        "n_nombre": nombre,
+        "n_telefono": telefono,
+        "n_correo": email,
+        "p_contrasenia": pass,
+
+      }).subscribe()
+    }
   }
 }
 
