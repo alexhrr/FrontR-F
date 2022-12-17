@@ -16,13 +16,13 @@ export class LoginComponent {
   }
 
   Ingresar(tipo: any, nombre: any, pass: any) {
-    if (tipo.value == "cliente") {
+    if (tipo == "cliente") {
       for (let cliente of this.clientes) {
         if (cliente.n_correo == nombre && cliente.p_contrasenia == pass) {
           this.router.navigate(['/menu-cliente'])
         }
       }
-      alert("Usuario o contraseña incorrecta")
+      
     }
     else {
       for (let restaurante of this.restaurantes) {
@@ -30,7 +30,7 @@ export class LoginComponent {
           this.router.navigate(['/menu-restaurante'])
         }
       }
-      alert("Usuario o contraseña incorrecta")
+      
 
     }
 

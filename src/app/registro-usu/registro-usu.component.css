@@ -1,33 +1,48 @@
-
 .example-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: absolute;
-    top: 30%;
-    left: 37%;
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 35%;
+  left: 15%;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
 }
 
 .example-full-width {
-    width: 100%;
+  width: 100%;
 }
+
 .texto {
-    text-align: center;
-    margin-top: 60px;
-  }
-  
-  .texto>h1{
-    font-size: 8vh;
-  }
+  position: absolute;
+  top: 9.5%;
+  left: 13.5%;
+  text-align: center;
+  margin-top: 60px;
+}
 
-  .texto>p{
-    font-size: 3vh;
-  }
-  
-  .texto>h1,p {
-    color: white;
+.texto>h1 {
+  font-size: 8vh;
+}
 
-  }
+.texto>p {
+  font-size: 3vh;
+}
+
+.texto>h1,
+p {
+  color: black;
+
+}
+
+.tamañoi {
+  position: absolute;
+  left: 2.5%;
+  width: 95%;
+  height: 92.5%;
+}
+
+a{
+  margin-top: 2%;
+}

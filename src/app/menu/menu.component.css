@@ -13,3 +13,7 @@
     display: grid;
     grid-template-columns: repeat(5, 3fr);
 }
+
+a{
+    margin-left: 2%;
+}

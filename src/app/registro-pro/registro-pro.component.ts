@@ -16,7 +16,7 @@ export class RegistroProComponent {
   constructor(private dataService: DataService) {
     this.dataService.getIngredientes().subscribe(data => { this.ingredientes = data })
     this.dataService.getCategoria().subscribe(data => { this.categorias = data })
-    
+
   }
 
   registro(producto: any, cat: any, precio: any, cantidad: any, ing: any, personalizable: String, foto: any) {
@@ -27,6 +27,9 @@ export class RegistroProComponent {
       "i_personalizable": personalizable == "true",
       "v_precio": precio,
       "fk_idCategoria": { "pk_idCategoria": cat },
+      "ingredientes": [
+        ing
+      ]
 
     }).subscribe((data: { [x: string]: any; }) => {
       Swal.fire({
@@ -37,6 +40,7 @@ export class RegistroProComponent {
         timer: 2000
       })
       this.idProducto = data["pk_idProducto"]
+
       this.dataService.setFoto(this.idProducto, this.formData).subscribe()
     })
 

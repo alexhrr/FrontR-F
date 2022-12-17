@@ -6,7 +6,7 @@
 </div>
 
 
-<form class="example-form" (submit)="Ingresar(tipo, nombre, pass)">
+<form class="example-form" (submit)="Ingresar(tipo.value, nombre.value, pass.value)">
     <mat-form-field class="example-full-width">
         <mat-label>Tipo de ususario</mat-label>
         <mat-select #tipo>
@@ -29,4 +29,5 @@
 
 
     <button mat-raised-button>Ingresar</button>
+    <a class="boton" mat-raised-button href="/registro-usuario" >Registrarse</a>
 </form>

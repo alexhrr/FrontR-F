@@ -1,9 +1,10 @@
 <img class="tamañoi" src="../assets/img/comida7.png">
 <div class="texto">
     <h1>Agrega tu producto</h1><br><br>
+    
 </div>
 
-<form class="example-form"
+<form class="example-form" onsubmit="return false"
     (submit)="registro(producto.value, cat.value, precio.value, cantidad.value, ing.value, personalizable.value, foto)">
     <mat-form-field class="example-full-width">
         <mat-label>Producto</mat-label>
@@ -26,8 +27,8 @@
         <input matInput #cantidad>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-        <mat-select placeholder="Ingrediente" formControlName="ing" #ing>
-            <mat-option *ngFor="let item of ingredientes" [value]="item.pk_idIngrediente"> {{ item.n_nombre }}
+        <mat-select multiple placeholder="Ingrediente" formControlName="ing" #ing>
+            <mat-option *ngFor="let item of ingredientes" [value]="item"> {{ item.n_nombre }}
 
             </mat-option>
         </mat-select>
@@ -43,4 +44,5 @@
     <div class="cb"> <input #foto type="file" formControlName="foto" (change)="onChange($event.target)"></div>
 
     <button mat-raised-button>Agregar</button>
+    <a class="boton" mat-raised-button href="/menu-restaurante" >Cancelar</a>
 </form>
