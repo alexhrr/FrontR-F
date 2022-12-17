@@ -3,7 +3,7 @@
     <h1>Arma tu menú</h1><br><br>
 </div>
 
-<form class="example-form" (submit)="registro( nombre, entrada, platofuerte, bebida, postre, precio, personalizable)">
+<form class="example-form" (submit)="registro( nombre.value, entrada.value, platofuerte.value, bebida.value, postre.value, precio.value, personalizable.value)">
     <mat-form-field class="example-full-width">
         <mat-label>Nombre</mat-label>
         <input matInput #nombre>
@@ -11,36 +11,40 @@
     <mat-form-field class="example-full-width">
         <mat-select placeholder="Entrada" formControlName="entrada" #entrada>
             <mat-option value="vacio">--Seleccione--</mat-option>
-            <mat-option *ngFor="let entrada of entradas" [value]="entrada.id"> {{ entrada.nNombre }}
+            <div *ngFor="let producto of productos" > 
+                <mat-option *ngIf="producto.fk_idCategoria.pk_idCategoria==1" [value]="producto">{{ producto.n_nombre }}</mat-option>
 
-            </mat-option>
+            </div>
         </mat-select>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
         <mat-select placeholder="Plato fuerte" formControlName="platofuerte" #platofuerte>
             <mat-option value="vacio">--Seleccione--</mat-option>
-            <mat-option *ngFor="let plato of platosfuertes" [value]="plato.id"> {{ plato.nNombre }}
+            <div *ngFor="let producto of productos" > 
+                <mat-option *ngIf="producto.fk_idCategoria.pk_idCategoria==2" [value]="producto">{{ producto.n_nombre }}</mat-option>
 
-            </mat-option>
+            </div>
         </mat-select>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
         <mat-select placeholder="Bebida" formControlName="bebida" #bebida>
             <mat-option value="vacio">--Seleccione--</mat-option>
-            <mat-option *ngFor="let bebida of bebidas" [value]="bebida.id"> {{ bebida.nNombre }}
+            <div *ngFor="let producto of productos" > 
+                <mat-option *ngIf="producto.fk_idCategoria.pk_idCategoria==3" [value]="producto">{{ producto.n_nombre }}</mat-option>
 
-            </mat-option>
+            </div>
         </mat-select>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
         <mat-select placeholder="Postre" formControlName="postre" #postre>
             <mat-option value="vacio">--Seleccione--</mat-option>
-            <mat-option *ngFor="let postre of postres" [value]="postre.id"> {{ postre.nNombre }}
+            <div *ngFor="let producto of productos" > 
+                <mat-option *ngIf="producto.fk_idCategoria.pk_idCategoria==4" [value]="producto">{{ producto.n_nombre }}</mat-option>
 
-            </mat-option>
+            </div>
         </mat-select>
     </mat-form-field>
 
@@ -51,12 +55,12 @@
         <span matTextPrefix>$&nbsp;</span>
     </mat-form-field>
 
-    <div class="cb">
-        <label>Personalizable: </label>
-        <mat-radio-group #personalizable>
-            <mat-radio-button value="true" color="primary">Si</mat-radio-button>
-            <mat-radio-button value="false" color="primary">No</mat-radio-button>
-        </mat-radio-group>
-    </div>
+    <mat-form-field class="example-full-width">
+        <mat-select placeholder="Personalizable" formControlName="personalizable" #personalizable>
+            <mat-option value=true>Si</mat-option>
+            <mat-option value="false">No</mat-option>
+        </mat-select>
+    </mat-form-field>
+
     <button mat-raised-button>Agregar</button>
 </form>

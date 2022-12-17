@@ -7,20 +7,11 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
-  menus: Array<any> = [
-   
-
-  ];
-  menu: any=[];
+  menus: any = [];
   constructor(private dataService: DataService) {
 
-    this.dataService.getMenu().subscribe(data => { this.menu = data })
-    this.generarDatos()
-  }
-  generarDatos(){
-    for (let m of this.menu) {
-      this.menus.push({ nombre: m.n_nombre,categoria: "menu", precio: m.v_precio })
-    }
+    this.dataService.getMenu().subscribe(data => { this.menus = data })
+
   }
 
 }
