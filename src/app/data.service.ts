@@ -42,7 +42,7 @@ export class DataService {
     return this.http.get('http://localhost:8090/categoriaProducto')
   }
 
-  setProductos(producto: any){
+  setProductos(producto: any):any{
     return this.http.post('http://localhost:8090/producto', producto)
   }
   
@@ -72,5 +72,8 @@ export class DataService {
 
   setProductoMenu(productomenu: any) {
     return this.http.post('http://localhost:8090/productoMenu', productomenu)
+  }
+  setFoto(id: any, foto: any) {
+    return this.http.post('http://localhost:8090/producto/foto/'+id, foto)
   }
 }
